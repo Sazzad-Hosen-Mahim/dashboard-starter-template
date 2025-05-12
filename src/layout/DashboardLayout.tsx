@@ -5,6 +5,7 @@ import { useAuthStore } from "@/store/useAuthStore";
 import { useThemeStore } from "@/store/useThemeStore";
 import { IoMoon, IoSunny } from "react-icons/io5";
 import { Outlet } from "react-router-dom";
+import { MdOutlineLogout } from "react-icons/md";
 
 const DashboardLayout = () => {
   const { theme, toggleTheme } = useThemeStore();
@@ -15,7 +16,7 @@ const DashboardLayout = () => {
       <div className="flex-1 ">
         <header className="bg-green-50 dark:bg-primary-dark border-b p-4 flex justify-between items-center">
           <div className="flex items-center space-x-4">
-            <h1 className="text-xl font-semibold">D</h1>
+            {/* <h1 className="text-xl font-semibold">D</h1> */}
 
             <Input className="w-[200px] border-black" placeholder="Search" />
           </div>
@@ -37,7 +38,10 @@ const DashboardLayout = () => {
             {/* User profile/avatar can go here */}
             <div className="flex gap-4">
               <div className="h-8 w-8 rounded-full bg-gray-200 dark:bg-gray-600"></div>
-              <Button onClick={logout}>Logout</Button>
+              <Button onClick={logout}>
+                <MdOutlineLogout />
+                Logout
+              </Button>
             </div>
           </div>
         </header>
